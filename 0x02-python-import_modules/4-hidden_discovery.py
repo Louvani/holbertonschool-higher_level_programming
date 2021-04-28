@@ -5,5 +5,4 @@ if __name__ == '__main__':
     array = dir(hidden_4)
     for i in range(len(array)):
         if array[i][0] != '_':
-            print(hidden[i])
-
+            print(array[i])
