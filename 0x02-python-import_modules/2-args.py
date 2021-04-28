@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from sys import argv
-lenght = len(argv)
-print("0 arguments." if lenght == 1 else "{} arguments:".format(lenght - 1))
-for i in range(1, len(argv)):
+if __name__ == '__main__':
+    from sys import argv
+    leng = len(argv)
+    print("0 arguments." if leng == 1 else "{} arguments:".format(leng - 1))
+    for i in range(1, len(argv)):
         print("{}: {}".format(i, argv[i]))
