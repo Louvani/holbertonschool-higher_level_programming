@@ -24,11 +24,11 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = new_node;
 		return (new_node);
 	}
+	current_node = *head;
 	if (number < current_node->n)
 	{
 		new_node->next = current_node;
 		current_node = new_node;
-		return (new_node);
 	}
 	while (current_node->next)
 	{
@@ -36,7 +36,6 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			new_node->next = current_node->next;
 			current_node->next = new_node;
-			return (new_node);
 		}
 		current_node = current_node->next;
 	}
