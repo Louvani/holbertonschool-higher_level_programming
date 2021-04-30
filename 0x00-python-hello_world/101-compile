@@ -1,0 +1,2 @@
+#!/bin/bash
+python -m py_compile.compile($PYFILE, cfile=None, dfile=None, doraise=False, optimize=-1, invalidation_mode=PycInvalidationMode.TIMESTAMP, quiet=0) 
