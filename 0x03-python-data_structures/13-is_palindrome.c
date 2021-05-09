@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 		aux = aux->next;
 		node1++;
 	}
-	if (node1 == 0)
+	if (node1 == 0 || node1 == 1)
 		return (1);
 	node1 -= 1;
 	len = node1;
