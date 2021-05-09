@@ -6,10 +6,10 @@
  * Return: The number of elements (Nodes)
  */
 
-size_t list_len(const listint_t *h)
+int list_len(const listint_t *h)
 {
 	const listint_t *current = NULL;
-	size_t counter = 0;
+	int counter = 0;
 
 	current = h;
 	while (current != NULL)
