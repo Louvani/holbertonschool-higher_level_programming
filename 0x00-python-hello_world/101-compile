@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m py_compile $PYFILE ; export PYFILEc=$PYFILE
+python2 -m py_compile $PYFILE
