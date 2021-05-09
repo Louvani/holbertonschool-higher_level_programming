@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#define BUZSIZE 1024
 /**
  * list_len - function that returns the number of elements in a linked list.
  * @h: pointer to head
@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *aux = *head;
 	int node1 = 0, node2 = 0, len = list_len(*head) - 1;
-	int arrayOfNum[len];
+	int arrayOfNum[BUZSIZE];
 	int status = 0;
 
 	while (aux)
