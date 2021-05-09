@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *aux = *head;
 	int node1 = 0, node2 = 0, len = list_len(*head);
-	int arrayOfNum[100];
+	int arrayOfNum[1024];
 	int status = 0;
 
 	if (len == 0)
