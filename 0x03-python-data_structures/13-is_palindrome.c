@@ -32,6 +32,9 @@ int is_palindrome(listint_t **head)
 	int arrayOfNum[BUZSIZE];
 	int status = 0;
 
+	if (len = 1)
+		return (1);
+
 	while (aux)
 	{
 		arrayOfNum[node1] = aux->n;
