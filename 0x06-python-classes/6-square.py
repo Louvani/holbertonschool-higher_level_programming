@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ definition of a square class """
 
+
 class Square:
     """ defines a square with a private instance attribute"""
     def __init__(self, size=0, position=(0, 0)):
@@ -20,6 +21,9 @@ class Square:
         if self.__size == 0:
             print("")
         else:
+            if self.__position[1] > 0:
+                for i in range(0, self.__position[1]):
+                    print("")
             for i in range(0, self.__size):
                 for k in range(0, self.__position[0]):
                     print(" ", end="")
@@ -46,17 +50,15 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) is not Tuple:
+        if type(value) is not tuple and len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            is_tuple = True
-            counter = 0
+            is_int = True
             for i in value:
                 if not isinstance(i, int) or i < 0:
-                    is_tuple = False
+                    is_int = False
                     break
-                counter += 1
-            if is_tuple and counter == 2:
+            if is_int:
                 self.__position = value
             else:
                 raise TypeError("position must be a tuple \
