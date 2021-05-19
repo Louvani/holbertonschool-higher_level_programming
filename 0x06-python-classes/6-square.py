@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """ definition of a square class """
 
-
-from typing import Tuple
-
-
 class Square:
     """ defines a square with a private instance attribute"""
     def __init__(self, size=0, position=(0, 0)):
