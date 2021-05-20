@@ -4,6 +4,7 @@
 
 class Rectangle:
     """Class that define a rectangle"""
+
     def __init__(self, width=0, height=0):
         """Initialice class Ractangle"""
         self.height = height
@@ -11,7 +12,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """retrieve width"""
+        """retrieve width as a private instance"""
         return self.__width
 
     @width.setter
