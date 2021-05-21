@@ -65,9 +65,10 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        width = size
-        height = size
-        return cls(width, height)
+        new = cls()
+        new.width = size
+        new.height = size
+        return new
 
     @property
     def width(self):
