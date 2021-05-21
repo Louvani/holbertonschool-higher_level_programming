@@ -20,6 +20,7 @@ class Rectangle:
             return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
+        """return the rectangle with the character #"""
         new_string = ''
         if self.__width == 0 or self.__height == 0:
             return new_string
@@ -31,6 +32,8 @@ class Rectangle:
         return new_string
 
     def __repr__(self):
+        """ return a string representation of the rectangle
+        to be able to recreate a new instance by using eval()"""
         return f'Rectangle({self.__width}, {self.__height})'
 
     @property
