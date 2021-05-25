@@ -27,6 +27,16 @@ Traceback (most recent call last):
 ...
 TypeError: size must be an integer
 
+>>> print_square(-5.8)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(5.8)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
 >>> len(__import__("4-print_square").__doc__) > 0
 True
 
