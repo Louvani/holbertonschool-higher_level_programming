@@ -1,0 +1,36 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(1024)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("""       word.     one""")
+word.
+<BLANKLINE>
+one
+>>> text_indentation("""       word.     one     hola """)
+word.
+<BLANKLINE>
+one     hola
+>>> text_indentation(""" \n     :  \n   .     ?    \n    """)
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+>>> len(__import__("5-text_indentation").__doc__) > 0
+True
+
+>>> len(__import__("5-text_indentation").text_indentation.__doc__) > 0
+True
+
+>>> import os
+>>> os.system("pep8 5-text_indentation.py")
+0
+
+>>> os.popen('head -1 5-text_indentation.py').read()
+'#!/usr/bin/python3\n'
