@@ -40,12 +40,12 @@ class TestMaxInteger(unittest.TestCase):
     def test_docmodule(self):
         """Function to test if have module documentation"""
         temp = __import__('6-max_integer').__doc__
-        self.assertTrue(temp is not None and len(temp) > 5)
+        self.assertTrue(temp is not None and len(temp) > 0)
 
     def test_docfunction(self):
         """Function to test if have function documentation"""
         temp = __import__('6-max_integer').max_integer.__doc__
-        self.assertTrue(temp is not None and len(temp) > 5)
+        self.assertTrue(temp is not None and len(temp) > 0)
 
 if __name__ == '__main__':
     unittest.main()
