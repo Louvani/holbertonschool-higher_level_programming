@@ -19,7 +19,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_emptylist(self):
         """Function to test if return None if list is empty"""
-        self.assertAlmostEqual(max_integer([]), None)
+        # self.assertAlmostEqual(max_integer([]), None)
+        self.assertEqual(max_integer([]), None)
 
     def test_bignumber(self):
         """Function to test max integer with big numbers"""
@@ -30,9 +31,11 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_types(self):
         """Function to test if raise TypeError"""
-        self.assertRaises(TypeError, max_integer, "Holberton")
-        self.assertRaises(TypeError, max_integer, True)
-        self.assertRaises(TypeError, max_integer, (1, 2))
+        with self.assertRaises(TypeError):
+            max_integer("Holberton")
+            max_integer(True)
+            max_integer((1, 2))
+            max_integer([1, 3.5, 6])
 
     def test_docmodule(self):
         """Function to test if have module documentation"""
