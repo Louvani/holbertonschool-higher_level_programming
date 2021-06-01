@@ -33,6 +33,15 @@ Now use it:
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-
-
-
+>>> my_list2 = MyList()
+>>> my_list2.append(1)
+>>> my_list2.append(-4)
+>>> my_list2.append(2)
+>>> my_list2.append(3)
+>>> my_list2.append(-8)
+>>> print(my_list2)
+[1, -4, 2, 3, -8]
+>>> my_list2.print_sorted()
+[-8, -4, 1, 2, 3]
+>>> print(my_list2)
+[1, -4, 2, 3, -8]
