@@ -1,25 +1,6 @@
-The ``7-base_geometry`` module
-
-======================
-
-
-Using ``print_sorted``
-
--------------------
-
-
-First import
-
-``print_sorted`` from the ``7-base_geometry`` module:
-
-
-    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
-    >>> area = __import__("7-base_geometry").BaseGeometry.area
-	>>> integer_validator = __import__("7-base_geometry").BaseGeometry.integer_validator
-
-
-Now use it:
-
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> area = __import__("7-base_geometry").BaseGeometry.area
+>>> integer_validator = __import__("7-base_geometry").BaseGeometry.integer_validator
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
