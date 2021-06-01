@@ -45,3 +45,6 @@ Now use it:
 [-8, -4, 1, 2, 3]
 >>> print(my_list2)
 [1, -4, 2, 3, -8]
+>>> my_list3 = MyList()
+>>> print(my_list3)
+[]
