@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Module to learn how to append to a fille"""
 
-import os
-
 
 def append_write(filename="", text=""):
     """function that appends a string at the end of a text file (UTF8)
