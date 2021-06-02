@@ -24,7 +24,7 @@ class Rectangle(BaseGeometry):
         width and height must be positive integers, validated
         by integer_validator
         """
-        if BaseGeometry.integer_validator(self, "width", width):
-            self.__width = width
-        if BaseGeometry.integer_validator(self, "height", height):
-            self.__height = height
+        self.__width = width
+        self.__height = height
+        self.integer_validator('width', width)
+        self.integer_validator('height', height)
