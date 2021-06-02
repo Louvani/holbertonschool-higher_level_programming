@@ -21,7 +21,12 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """inherits from BaseGeometry"""
     def __init__(self, width, height):
+        """Instantiation with width and height
+        width and height must be private. No getter or setter
+        width and height must be positive integers, validated
+        by integer_validator
+        """
         if BaseGeometry.integer_validator(self, "width", width):
-            self._width = width
+            self.__width = width
         if BaseGeometry.integer_validator(self, "height", height):
-            self._height = height
+            self.__height = height
