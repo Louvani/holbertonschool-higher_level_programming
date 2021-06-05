@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-""">Hola"""
+"""
+Module with the Base class for
+the proyect "almost a circle".
+"""
 
 
 class Base:
-    """2"""
+    """Base clase"""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize the id of the objects"""
         if id is not None:
             self.id = id
         else:
