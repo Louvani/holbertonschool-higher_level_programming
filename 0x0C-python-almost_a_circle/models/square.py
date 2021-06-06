@@ -12,9 +12,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        new_string = "[Square] ({}) {}/{} - {}/{}".format(self.id,
-        self.x , self.y, self.width, self.height)
+        """returns [Square] (<id>) <x>/<y> - <size>"""
+        new_string = "[Square] ({}) {}/{} - {}".format(self.id,
+        self.x , self.y, self.size)
         return new_string
 
     @property
@@ -32,3 +32,13 @@ class Square(Rectangle):
         else:
             self.width = value
             self.height = value
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if len(args) > 0:
+            list_args = ['id', 'size', 'x', 'y']
+            for value in range(len(args)):
+                setattr(self, list_args[value], args[value])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
