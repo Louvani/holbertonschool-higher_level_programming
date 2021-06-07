@@ -100,16 +100,24 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        new_string = "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-        self.__x, self.__y, self.__width, self.__height)
-        return new_string
+        new_str = "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return new_str
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
         if len(args) > 0:
             list_args = ['id', 'width', 'height', 'x', 'y']
-            for value in range(len(args)):
-                setattr(self, list_args[value], args[value])
+            for position in range(len(args)):
+                setattr(self, list_args[position], args[position])
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        new_dict = {}
+        for key in self.__dict__:
+            new_key = key.replace("_Rectangle__", "")
+            new_dict[new_key] = self.__dict__[key]
+        return new_dict

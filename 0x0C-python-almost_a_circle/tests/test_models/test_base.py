@@ -8,16 +8,24 @@ import models.base
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
-    """Class to test the base class"""
+class Test_Base_Reqeriments(unittest.TestCase):
+    """Class to test the base class requeriments"""
+
+    # Testing README file
+    def test_readme(self):
+        """Test if README file exist"""
+        readme = os.getcwd()
+        readme1 = readme + '/README.md'
+        readme2 = os.path.exists(readme1)
+        self.assertEqual(readme2, True)
 
     # Testing pep8 and shebang
     def test_pep8(os_system):
-        """testing style"""
+        """PEP8 validation"""
         os_system.assertEqual(os.system("pep8 ./models/base.py"), 0)
 
     def test_shebang(self):
-        """Testing the shebang"""
+        """First line contains #!/usr/bin/python3"""
         with open('./models/base.py', 'r') as fd:
             x = fd.read()
             line = x.splitlines()
@@ -25,16 +33,35 @@ class TestBase(unittest.TestCase):
 
     # Documentation for Module, class and methods exist
     def test_docmodule(self):
-        """Function to test if have module documentation"""
+        """Module is documented"""
         temp = models.base.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
 
     def test_docclass(self):
-        """Function to test if have class documentation"""
+        """Class is documented"""
         temp = Base.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
 
     def test_docfunction(self):
-        """Function to test if have function documentation"""
+        """Function is documented"""
         temp = Base.__init__.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
+
+
+class Test_Base(unittest.TestCase):
+    """Class to test the base class code"""
+
+    def test_base_class_constructor(self):
+        """testing init functión"""
+        self.assertEqual(Base._Base__nb_objects, 0)
+
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
+        b2 = Base()
+        self.assertEqual(b2.id, 2)
+        b3 = Base()
+        self.assertEqual(b3.id, 3)
+        b4 = Base(12)
+        self.assertEqual(b4.id, 12)
+        b5 = Base()
+        self.assertEqual(b5.id, 4)

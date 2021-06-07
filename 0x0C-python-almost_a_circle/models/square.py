@@ -11,16 +11,10 @@ class Square(Rectangle):
         self.size = size
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """returns [Square] (<id>) <x>/<y> - <size>"""
-        new_string = "[Square] ({}) {}/{} - {}".format(self.id,
-        self.x , self.y, self.size)
-        return new_string
-
     @property
     def size(self):
         """retrieve width"""
-        return self.width
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -30,8 +24,13 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError('width must be > 0')
         else:
-            self.width = value
-            self.height = value
+            self.__size = value
+
+    def __str__(self):
+        """returns [Square] (<id>) <x>/<y> - <size>"""
+        new_string = "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.size)
+        return new_string
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
@@ -42,3 +41,16 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        new_dict = {}
+        list_args = ['id', 'size', 'x', 'y']
+        for key in list_args:
+            if key == 'size':
+                new_dict[key] = self.__dict__['_Square__size']
+            elif key == 'id':
+                new_dict[key] = self.__dict__[key]
+            else:
+                new_dict[key] = self.__dict__['_Rectangle__' + key]
+        return new_dict
