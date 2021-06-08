@@ -37,4 +37,4 @@ class Base:
             else:
                 for list_o in range(len(list_objs)):
                     new_list.append(list_objs[list_o].to_dictionary())
-                f.write(json.dumps(new_list))
+                f.write(Base.to_json_string(new_list))
