@@ -8,13 +8,12 @@ class Square(Rectangle):
     """ inherits from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
         """Class construcctor"""
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
         """retrieve width"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -24,7 +23,8 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError('width must be > 0')
         else:
-            self.__size = value
+            self.width = value
+            self.height = value
 
     def __str__(self):
         """returns [Square] (<id>) <x>/<y> - <size>"""
@@ -48,7 +48,7 @@ class Square(Rectangle):
         list_args = ['id', 'size', 'x', 'y']
         for key in list_args:
             if key == 'size':
-                new_dict[key] = self.__dict__['_Square__size']
+                new_dict[key] = self.__dict__['_Rectangle__width']
             elif key == 'id':
                 new_dict[key] = self.__dict__[key]
             else:
