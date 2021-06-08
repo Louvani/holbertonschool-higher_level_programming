@@ -156,7 +156,7 @@ class Test_Square(unittest.TestCase):
         test1 = '[Square] (89) 12/1 - 7'
         self.assertEqual(s1.__str__(), test1)
 
-    #T ask 14. Square instance to dictionary representation
+    # Task 14. Square instance to dictionary representation
     def test_to_dict_square(self):
         """Correct Output"""
         s1 = Square(10, 2, 1)
