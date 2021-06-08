@@ -157,19 +157,19 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(s1.__str__(), test1)
 
     #Task 14. Square instance to dictionary representation
-    def test_to_dict(self):
+    def test_to_dict_square(self):
         """Correct Output"""
-        r1 = Rectangle(10, 2, 1, 9)
-        r1_dictionary = r1.to_dictionary()
-        test1 = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        self.assertEqual(r1_dictionary, test1)
-        self.assertIsInstance(r1_dictionary, dict)
+        s1 = Square(10, 2, 1)
+        s1_dictionary = s1.to_dictionary()
+        test1 = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
+        self.assertEqual(s1_dictionary, test1)
+        self.assertIsInstance(s1_dictionary, dict)
 
-        r2 = Rectangle(1, 1)
-        self.assertNotEqual(r1.__str__(), r2.__str__())
-        r2.update(**r1_dictionary)
-        r2_dictionary = r2.to_dictionary()
-        test2 = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        self.assertEqual(r2_dictionary, test2)
-        self.assertEqual(r1.__str__(), r2.__str__())
-        self.assertIsNot(r1.__str__(), r2.__str__())
+        s2 = Square(1, 1)
+        self.assertNotEqual(s1.__str__(), s2.__str__())
+        s2.update(**s1_dictionary)
+        s2_dictionary = s2.to_dictionary()
+        test2 = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
+        self.assertEqual(s2_dictionary, test2)
+        self.assertEqual(s1.__str__(), s2.__str__())
+        self.assertIsNot(s1.__str__(), s2.__str__())
