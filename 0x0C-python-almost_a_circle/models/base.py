@@ -34,5 +34,7 @@ class Base:
             if list_objs is None:
                 f.write("[]")
             else:
-                for list_o in list_objs:
-                    f.write(json.dumps(list_o.to_dictionary()))
+                new_list = []
+                for list_o in range(len(list_objs)):
+                    new_list.append(list_objs[list_o].to_dictionary())
+                f.write(json.dumps(new_list))
