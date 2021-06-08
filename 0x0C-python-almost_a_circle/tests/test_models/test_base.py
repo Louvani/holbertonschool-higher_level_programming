@@ -96,3 +96,9 @@ class Test_Base(unittest.TestCase):
         # TEST EMPTY LIST
         json_dictionary = Base.to_json_string([])
         self.assertIsInstance(json_dictionary, str)
+
+    # Task 16. Dictionary to JSON string
+    def test_save_to_file(self):
+        """Correct output"""
+        new_list = None
+        self.assertTrue(type(Base.save_to_file(new_list)), [])
