@@ -54,6 +54,7 @@ class Test_Base_Reqeriments(unittest.TestCase):
         temp = Base.to_json_string.__doc__
         self.assertTrue(temp is not None and len(temp) > 0)
 
+
 class Test_Base(unittest.TestCase):
     """Class to test the base class code"""
 
@@ -64,7 +65,6 @@ class Test_Base(unittest.TestCase):
     def test_base_class_constructor(self):
         """testing init functión"""
         self.assertEqual(Base._Base__nb_objects, 0)
-
 
         b1 = Base()
         self.assertEqual(b1.id, 1)
@@ -90,11 +90,9 @@ class Test_Base(unittest.TestCase):
         # self.assertEqual(json_dictionary, test2)
         self.assertIsInstance(json_dictionary, str)
 
-       #TEST EMPTY LIST
+        # TEST NONE LIST
         json_dictionary = Base.to_json_string(None)
         self.assertIsInstance(json_dictionary, str)
-
-    # Task 16. JSON string to file
-    def test_save_to_file(self):
-       """correct aoutput"""
-       
+        # TEST EMPTY LIST
+        json_dictionary = Base.to_json_string([])
+        self.assertIsInstance(json_dictionary, str)
