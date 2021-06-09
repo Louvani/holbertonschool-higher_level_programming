@@ -38,7 +38,7 @@ class Base:
             else:
                 for list_o in range(len(list_objs)):
                     new_list.append(list_objs[list_o].to_dictionary())
-                f.write(Base.to_json_string(new_list))
+                f.write(    )
 
     @staticmethod
     def from_json_string(json_string):
@@ -65,7 +65,7 @@ class Base:
         new_list = []
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__), mode='r') as f:
-                temp = cls.from_json_string(json.load(f))
+                temp = cls.from_json_string(json.load(f.read()))
                 for item in temp:
                     new_list.append(cls.create(**item))
                 return new_list
