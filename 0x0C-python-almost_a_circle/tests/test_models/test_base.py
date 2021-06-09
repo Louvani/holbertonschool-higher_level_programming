@@ -131,3 +131,4 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(type(list_input), "list")
         self.assertEqual(type(json_list_input), "str")
         self.assertEqual(type(list_output), "list")
+        self.assertEqual(list_input, list_output)
