@@ -4,6 +4,7 @@ Module with the Base class for
 the proyect "almost a circle".
 """
 import json
+from os import path
 
 
 class Base:
@@ -57,3 +58,16 @@ class Base:
             dummy = cls(12)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        new_list = []
+        if path.exists("{}.json".format(cls.__name__)):
+            with open("{}.json".format(cls.__name__), mode='r') as f:
+                temp = cls.from_json_string(json.load(f))
+                for item in temp:
+                    new_list.append(cls.create(**item))
+                return new_list
+        else:
+            return new_list
