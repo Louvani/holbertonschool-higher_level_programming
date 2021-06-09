@@ -56,3 +56,4 @@ class Base:
         if cls.__name__ == "Square":
             dummy = cls(12)
         dummy.update(**dictionary)
+        return dummy
