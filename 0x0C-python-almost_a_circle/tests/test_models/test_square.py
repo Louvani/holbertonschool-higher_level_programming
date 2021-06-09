@@ -121,6 +121,11 @@ class Test_Square(unittest.TestCase):
         s1 = Square(5)
         self.assertEqual(s1.size, 5)
 
+        self.assertRaisesRegex(
+            TypeError, 'width must be an integer', Square, "10")
+        self.assertRaisesRegex(
+            TypeError, 'width must be an integer', Square, 3.5)
+
     # Task 12. Square update
     def test_update_square(self):
         """Correct Output"""

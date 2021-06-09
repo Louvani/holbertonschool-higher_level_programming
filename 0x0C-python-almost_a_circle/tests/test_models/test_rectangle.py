@@ -19,9 +19,21 @@ class Test_Rectangle_Requeriments(unittest.TestCase):
         """PEP8 validation"""
         os_system.assertEqual(os.system("pep8 ./models/rectangle.py"), 0)
 
-    def test_shebang(self):
+    def test_pep8_test_rectangle(os_system):
+        """PEP8 validation"""
+        path = os.system("pep8 tests/test_models/test_rectangle.py")
+        os_system.assertEqual(path, 0)
+
+    def test_shebang_rectangle(self):
         """First line contains #!/usr/bin/python3"""
         with open('./models/rectangle.py', 'r') as fd:
+            x = fd.read()
+            line = x.splitlines()
+            self.assertEqual(line[0], '#!/usr/bin/python3')
+
+    def test_shebang_test_rectangle(self):
+        """First line contains #!/usr/bin/python3"""
+        with open('./tests/test_models/test_rectangle.py', 'r') as fd:
             x = fd.read()
             line = x.splitlines()
             self.assertEqual(line[0], '#!/usr/bin/python3')
