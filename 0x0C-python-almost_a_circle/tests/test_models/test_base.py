@@ -14,20 +14,36 @@ class Test_Base_Reqeriments(unittest.TestCase):
 
     # Testing README file
     def test_readme(self):
-        """Test if README file exist"""
+        """Test if README file exist and is not empty"""
         readme = os.getcwd()
         readme1 = readme + '/README.md'
         readme2 = os.path.exists(readme1)
-        self.assertEqual(readme2, True)
+        self.assertTrue(readme2, True)
+
+        with open(readme1, 'r') as fd:
+            x = fd.read()
+            self.assertTrue(len(x) > 0)
 
     # Testing pep8 and shebang
-    def test_pep8(os_system):
+    def test_pep8_Base(os_system):
         """PEP8 validation"""
         os_system.assertEqual(os.system("pep8 ./models/base.py"), 0)
+
+    def test_pep8_test_base(os_system):
+        """PEP8 validation"""
+        path = os.system("pep8 tests/test_models/test_base.py")
+        os_system.assertEqual(path, 0)
 
     def test_shebang(self):
         """First line contains #!/usr/bin/python3"""
         with open('./models/base.py', 'r') as fd:
+            x = fd.read()
+            line = x.splitlines()
+            self.assertEqual(line[0], '#!/usr/bin/python3')
+
+    def test_shebang_test_base(self):
+        """First line contains #!/usr/bin/python3"""
+        with open('./tests/test_models/test_base.py', 'r') as fd:
             x = fd.read()
             line = x.splitlines()
             self.assertEqual(line[0], '#!/usr/bin/python3')
@@ -102,3 +118,16 @@ class Test_Base(unittest.TestCase):
         """Correct output"""
         new_list = None
         self.assertTrue(type(Base.save_to_file(new_list)), [])
+
+    # Task 17. JSON string to dictionary
+    def from_json_string(self):
+        """Correct output"""
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+            ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(type(list_input), "list")
+        self.assertEqual(type(json_list_input), "str")
+        self.assertEqual(type(list_output), "list")
