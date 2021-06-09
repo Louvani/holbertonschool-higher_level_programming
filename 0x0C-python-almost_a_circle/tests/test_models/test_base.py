@@ -132,3 +132,14 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(type(json_list_input), "str")
         self.assertEqual(type(list_output), "list")
         self.assertEqual(list_input, list_output)
+
+    # Task 18. Dictionary to Instance
+    def test_dictionary_to_instance(self):
+        """correct output"""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(r1.__str__(), '[Rectangle] (1) 1/0 - 3/5')
+        self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/0 - 3/5')
+        self.assertIsNot(r1, r2)
+        self.assertNotEqual(r1, r2)
