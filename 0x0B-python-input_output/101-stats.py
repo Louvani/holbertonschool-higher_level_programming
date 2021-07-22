@@ -12,7 +12,7 @@ for idx, line in enumerate(sys.stdin):
     words = line.split()
     file_size += int(words[-1])
     status_code.append(words[-2])
-    if not idx + 1 % 10 and idx != 0:
+    if not (idx + 1) % 10 and idx != 0:
         print('File size: {:d}'.format(file_size))
         file_size = 0
         for key in status_code_list:
