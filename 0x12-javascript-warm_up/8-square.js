@@ -2,11 +2,17 @@
 
 const num = Number.parseInt(process.argv[2]);
 if (isNaN(num)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   let idx = 0;
+  let x = '';
   while (idx < num) {
-    console.log('C is fun');
+    x += 'X';
+    idx += 1;
+  }
+  idx = 0;
+  while (idx < num) {
+    console.log(x);
     idx += 1;
   }
 }
