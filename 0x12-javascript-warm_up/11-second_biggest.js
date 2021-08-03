@@ -11,7 +11,7 @@ if (!process.argv[2]) {
     list1.push(Number.parseInt(process.argv[idx]));
     idx += 1;
   }
-  list1.sort();
+  list1.sort(function (a, b) { return a - b; });
   for (idx = list1.length - 2; idx >= 0; idx--) {
     if (list1[idx] !== list1[list1.length - 1]) {
       console.log(list1[idx]);
