@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Module to select states from hbtn_0e_0_usa DataBase'''
 import MySQLdb
 
 conn = MySQLdb.connect(host="localhost", port=3306, user="root",
