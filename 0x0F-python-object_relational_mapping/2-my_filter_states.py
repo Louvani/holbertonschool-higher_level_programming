@@ -13,7 +13,7 @@ if __name__ == '__main__':
                               passwd=argv[2], db=argv[3], charset="utf8")
     cursor = connect.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE '{}'\
+    query = "SELECT * FROM states WHERE BINARY name LIKE '{:s}'\
         ORDER BY id ASC".format(argv[4])
 
     cursor.execute(query)
