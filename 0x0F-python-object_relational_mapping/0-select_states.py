@@ -6,14 +6,15 @@ Module to select states from hbtn_0e_0_usa DataBase
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    connection = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                                 passwd=argv[2], db=argv[3])
-    cur = connection.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
-    query_rows = cur.fetchall()
+    connect = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                              passwd=argv[2], db=argv[3])
+    cursor = connect.cursor()
+    query = "SELECT * FROM states ORDER BY 'states.id' ASC"
+    cursor.execute(query)
+    query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
-    cur.close()
-    connection.close()
+    cursor.close()
+    connect.close()
