@@ -13,10 +13,11 @@ if __name__ == '__main__':
                               passwd=argv[2], db=argv[3], charset="utf8")
     cursor = connect.cursor()
     query = "SELECT * FROM states\
-        WHERE name regexp '^N.'\
+        WHERE name LIKE BINARY 'N%'\
         ORDER BY id ASC"
     cursor.execute(query)
     query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
+    cursor.close()
     connect.close()
