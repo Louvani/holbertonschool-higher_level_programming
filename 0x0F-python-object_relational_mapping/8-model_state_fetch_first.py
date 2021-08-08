@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     # work with sess
     query = session.query(State).first()
-    if query is not none:
+    if query is not None:
         print("{}: {}".format(query.id, query.name))
     else:
         print("Nothing")
