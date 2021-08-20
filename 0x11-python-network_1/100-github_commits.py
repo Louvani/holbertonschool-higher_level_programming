@@ -13,11 +13,8 @@ if __name__ == '__main__':
     req = requests.get(url, params=values)
     try:
         response = req.json()
-        if len(response) > 0:
-            for item in response:
-                print("{}: {}".format(
-                    item['sha'], item['commit']['author']['name']))
-        else:
-            print("No result")
+        for item in response:
+            print("{}: {}".format(
+                item['sha'], item['commit']['author']['name']))
     except:
         pass
