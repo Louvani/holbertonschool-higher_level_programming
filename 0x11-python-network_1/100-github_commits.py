@@ -16,5 +16,5 @@ if __name__ == '__main__':
         for item in response:
             print("{}: {}".format(
                 item['sha'], item['commit']['author']['name']))
-    except:
+    except IndexError:
         pass
