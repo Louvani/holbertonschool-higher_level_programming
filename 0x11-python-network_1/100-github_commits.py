@@ -5,11 +5,11 @@ from sys import argv
 import requests
 
 if __name__ == '__main__':
-    owner = argv[1]
-    repository = argv[2]
+    repository = argv[1]
+    owner = argv[2]
     url = 'https://api.github.com/repos/{}/{}/commits'.format(
         owner, repository)
-    values = {'sort': 'created', 'per_page': 10}
+    values = {'per_page': 10}
     req = requests.get(url, params=values)
     try:
         response = req.json()
