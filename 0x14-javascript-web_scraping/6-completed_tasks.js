@@ -12,11 +12,8 @@ request(url, function (err, res, body) {
   for (const task of data) {
     if (result[task.userId] && task.completed) {
       result[task.userId] += 1;
-    } else if (!result[task.userId]) {
-      result[task.userId] = 0;
-      if (task.completed) {
-        result[task.userId] += 1;
-      }
+    } else if (!result[task.userId] && task.completed) {
+      result[task.userId] = 1;
     }
   }
   console.log(result);
